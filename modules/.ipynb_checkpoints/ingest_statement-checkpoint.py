@@ -67,7 +67,7 @@
        "        <div>\n",
        "            <p><b>SparkContext</b></p>\n",
        "\n",
-       "            <p><a href=\"http://host.docker.internal:4042\">Spark UI</a></p>\n",
+       "            <p><a href=\"http://host.docker.internal:4041\">Spark UI</a></p>\n",
        "\n",
        "            <dl>\n",
        "              <dt>Version</dt>\n",
@@ -83,7 +83,7 @@
        "        "
       ],
       "text/plain": [
-       "<pyspark.sql.session.SparkSession at 0x213bdba7160>"
+       "<pyspark.sql.session.SparkSession at 0x2b65b0ab580>"
       ]
      },
      "execution_count": 6,
@@ -140,29 +140,29 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 10,
    "id": "305a5eb8-dfd0-440f-ae0c-20f9f07a8791",
    "metadata": {},
    "outputs": [],
    "source": [
-    "def read_file(link):\n",
-    "    file=spark.read.format(\"com.crealytics.spark.excel\") \\\n",
+    "def read_files(file):\n",
+    "    df_file=spark.read.format(\"com.crealytics.spark.excel\") \\\n",
     "    .option(\"header\", \"true\") \\\n",
     "    .option(\"inferSchema\", \"true\") \\\n",
-    "    .load(link)\n",
-    "    return file"
+    "    .load(file)\n",
+    "    return df_file"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "60869f3d-f87a-4e3f-a6b7-41347d205521",
+   "execution_count": 11,
+   "id": "125bab3b-3f43-4c01-81bf-d52dfc0e3761",
    "metadata": {},
    "outputs": [],
    "source": []
   }
  ],
- "metadata": {
+ "metadata": {s
   "kernelspec": {
    "display_name": "Python 3 (ipykernel)",
    "language": "python",
